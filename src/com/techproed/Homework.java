@@ -3,7 +3,7 @@ package com.techproed;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Day02_Homework {
+public class Homework {
     /*
     1. Yeni bir class oluşturun :Homework
 2. ChromeDriver’ı kullanarak facebook’a gidin ve sayfa başlığının(Page Title) “facebook” olup olmadığını doğrulayın,
@@ -18,37 +18,23 @@ public class Day02_Homework {
      */
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver","C:\\Users\\Fatih USTUNYER\\Downloads\\Selenium Dependencies\\drivers\\chromedriver.exe");
-        WebDriver webDriver=new ChromeDriver();
-        webDriver.get("http://tr-tr.facebook.com");
-        String sayfaTitle=webDriver.getTitle();
-        System.out.println(sayfaTitle);
+        WebDriver webdriver =new ChromeDriver();
+        webdriver.get("http://www.facebook.com");
+        String sayfaTitle=webdriver.getTitle();
         if(sayfaTitle.equals("facebook")){
-            System.out.println("title dogru");
+            System.out.println("title facebook");
         }else{
-            System.out.println("dogru baslik: facebook");
+            System.out.println(sayfaTitle);
         }
-        String sayfaUrl=webDriver.getCurrentUrl();
-        System.out.println(sayfaUrl);
-        if(sayfaUrl.equals("tr-tr.facebook.com")){
-            System.out.println("Url dogru");
+        String sayfaUrl=webdriver.getCurrentUrl();
+        if(sayfaUrl.contains("facebook")){
+            System.out.println("Sayafa url facebook iceriyor");
         }else{
-            System.out.println("dogru url:www.facebook.com");
+            System.out.println(sayfaUrl);
         }
-        webDriver.navigate().to("http://www.walmart.com");
-        String sayfaBasligi=webDriver.getTitle();
-        System.out.println(sayfaBasligi.contains("walmart.com"));
-        webDriver.navigate().back();
-        webDriver.navigate().refresh();
-        webDriver.manage().window().maximize();
-        webDriver.quit();
-
-
-
-
 
 
 
 
     }
-
 }
