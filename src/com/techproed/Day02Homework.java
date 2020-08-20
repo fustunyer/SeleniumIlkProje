@@ -3,7 +3,7 @@ package com.techproed;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Homework {
+public class Day02Homework {
     /*
     1. Yeni bir class oluşturun :Homework
 2. ChromeDriver’ı kullanarak facebook’a gidin ve sayfa başlığının(Page Title) “facebook” olup olmadığını doğrulayın,
@@ -19,6 +19,7 @@ public class Homework {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver","C:\\Users\\Fatih USTUNYER\\Downloads\\Selenium Dependencies\\drivers\\chromedriver.exe");
         WebDriver webdriver =new ChromeDriver();
+        webdriver.manage().window().maximize();
         webdriver.get("http://www.facebook.com");
         String sayfaTitle=webdriver.getTitle();
         if(sayfaTitle.equals("facebook")){
@@ -32,6 +33,12 @@ public class Homework {
         }else{
             System.out.println(sayfaUrl);
         }
+        webdriver.navigate().to("https://www.walmart.com/");
+        String sayfaBasligi=webdriver.getTitle();
+        System.out.println(sayfaBasligi.toLowerCase().contains("Walmart.com"));
+        webdriver.navigate().back();
+        webdriver.navigate().refresh();
+        webdriver.quit();
 
 
 
